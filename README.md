@@ -1,2 +1,2 @@
-# website_landingpage
+# Landing Page
 Hello Everyone

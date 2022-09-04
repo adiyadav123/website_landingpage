@@ -67,7 +67,7 @@ const form = document.querySelector("form");
 const search = document.querySelector("#search");
 
 const getWeather = async (city) => {
-const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+const url = "api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c1b724d4a8b26f8f2bf3bd5cbd950b10";
 const response = await fetch(url);
 const data = await response.json();
 console.log(data);

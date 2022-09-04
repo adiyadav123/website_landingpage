@@ -5,6 +5,7 @@ const search = document.querySelector("#search");
 //const API = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
 //const IMG_URL = `https: //openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+alert("Temperature is in Kelvin and 1 deg Celcius == 273.15 K)
 const getWeather =async (city) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
     const response = await fetch(url);

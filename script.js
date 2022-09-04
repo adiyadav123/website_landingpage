@@ -1,3 +1,4 @@
+window.onload = () => {
 const API_KEY = `c1b724d4a8b26f8f2bf3bd5cbd950b10`;
 const form = document.querySelector("form");
 const weather = document.querySelector("#weather");
@@ -32,3 +33,4 @@ form.addEventListener(
         event.preventDefault();
     }
 )
+}

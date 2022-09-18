@@ -1,41 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
- font-family:'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-main{
- display:flex;
- align-items:center;
- justify-content:center;
- min-height:100vh;
- background:rgb(219, 219, 219);
- flex-direction:column;
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
-.row{
-display:flex;
-align-items:center;
-justify-content:center;
-width:1000px;
-margin:10px;
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    perspective: 5000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(252, 166, 67);
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 20px  rgb(118, 118, 118);
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color:#edcd44;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow:0 0 20px #edcd44 ;
+    transform: rotateY(180deg);
+  }
+  .iron{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-top: 15px;
+    box-shadow: 0 0 0 10px #81cad6;
+  }
+  .par span{
+    padding: 5px;
+    background-color: #81cad6;
+    box-shadow:0 0 20px #81cad6 ;
+    border-radius: 10px;
+  }
+  #text{
+    margin-top: -500px;
+    position: absolute;
+    margin-left: 10px;
+ }
+#text h1{
+  letter-spacing:5px ;
 }
-input{
-padding:10px;
-}
-#search{
-font-size:25px;
-border-radius:25px;
-border:none;
-outline:none;
-box-shadow:0 0 20px rgb(255, 255, 255);
-}
-#weather{
-height:200px;
-width:250px;
-border-radius:20px;
-box-shadow:0 0 20px #b7c6e8;
-background:#ced8f0;
-color:rgb(252, 252, 252);
-padding:right:40px;
+.card{
+  padding: 5px;
+  background: #edcd44;
+  border-radius: 15px;
+  padding-left: 5px;
+  box-shadow: 0 0 20px #fce064;
+  color: #09525e;
 }
